@@ -84,6 +84,7 @@
     "prettier": "prettier --write .",
     "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
     "up": "taze latest -I"
   },
   "peerDependencies": {
