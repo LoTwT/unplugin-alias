@@ -82,6 +82,7 @@
     "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm run build",
     "prettier": "prettier --write .",
+    "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
     "up": "taze latest -I"
   },
