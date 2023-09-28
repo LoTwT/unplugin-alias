@@ -1,4 +1,4 @@
-import { URL, fileURLToPath } from "node:url"
+import { resolve } from "node:path"
 import { type Alias, type TSConfigPaths } from "./types"
 
 const suffix = "/*"
@@ -23,5 +23,4 @@ export const mapPathToAlias = (paths: TSConfigPaths): Alias => {
 export const removeSuffix = (s: string, suffix: string) =>
   s.endsWith(suffix) ? s.slice(0, Math.max(0, s.length - suffix.length)) : s
 
-export const resolveFilePath = (filePath: string) =>
-  fileURLToPath(new URL(filePath, import.meta.url))
+export const resolveFilePath = (filePath: string) => resolve(filePath)
