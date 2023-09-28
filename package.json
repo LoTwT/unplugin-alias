@@ -37,6 +37,11 @@
       "require": "./dist/webpack.cjs",
       "import": "./dist/webpack.js"
     },
+    "./rspack": {
+      "types": "./dist/rspack.d.ts",
+      "require": "./dist/rspack.cjs",
+      "import": "./dist/rspack.js"
+    },
     "./rollup": {
       "types": "./dist/rollup.d.ts",
       "require": "./dist/rollup.cjs",
@@ -93,11 +98,15 @@
     "@nuxt/schema": "^3",
     "esbuild": "*",
     "rollup": "^3",
+    "rspack": "*",
     "vite": ">=3",
     "webpack": "^4 || ^5"
   },
   "peerDependenciesMeta": {
     "webpack": {
+      "optional": true
+    },
+    "rspack": {
       "optional": true
     },
     "rollup": {
@@ -117,6 +126,8 @@
     }
   },
   "dependencies": {
+    "@rollup/plugin-alias": "^5.0.0",
+    "get-tsconfig": "^4.7.2",
     "unplugin": "^1.5.0"
   },
   "devDependencies": {
