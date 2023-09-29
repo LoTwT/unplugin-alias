@@ -15,7 +15,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [Alias.default()],
+  plugins: [Alias()],
   module: {
     rules: [
       {

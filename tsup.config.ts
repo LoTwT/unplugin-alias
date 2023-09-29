@@ -5,5 +5,7 @@ export default defineConfig({
   clean: true,
   format: ["cjs", "esm"],
   dts: true,
-  onSuccess: "npm run build:fix",
+  cjsInterop: true,
+  splitting: true,
+  bundle: true,
 })

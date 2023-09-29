@@ -75,7 +75,6 @@
   ],
   "scripts": {
     "build": "tsup",
-    "build:fix": "tsx scripts/postbuild.ts",
     "dev": "tsup --watch src",
     "lint": "eslint .",
     "play:vite": "pnpm -C playgrounds/vite run dev",
