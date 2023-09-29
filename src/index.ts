@@ -76,15 +76,6 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (
         ...compiler.options.resolve.alias,
       }
     },
-
-    esbuild: {
-      setup: (esbuildConfig) => {
-        esbuildConfig.initialOptions.alias = {
-          ...alias,
-          ...esbuildConfig.initialOptions.alias,
-        }
-      },
-    },
   }
 }
 
