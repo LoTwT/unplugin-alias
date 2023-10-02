@@ -5,7 +5,16 @@
 ## Install
 
 ```bash
-npm i unplugin-alias
+pnpm i unplugin-alias
+```
+
+## Usage
+
+```ts
+export interface Options {
+  configFile?: string
+  cwd?: string
+}
 ```
 
 <details>
@@ -23,8 +32,6 @@ export default defineConfig({
   ],
 })
 ```
-
-Example: [`playground/`](./playground/)
 
 <br></details>
 
@@ -55,6 +62,23 @@ module.exports = {
   /* ... */
   plugins: [
     require("unplugin-alias/webpack")({
+      /* options */
+    }),
+  ],
+}
+```
+
+<br></details>
+
+<details>
+<summary>Rspack</summary><br>
+
+```ts
+// rspack.config.js
+module.exports = {
+  /* ... */
+  plugins: [
+    require("unplugin-alias/rspack")({
       /* options */
     }),
   ],
@@ -105,14 +129,6 @@ module.exports = {
 <details>
 <summary>esbuild</summary><br>
 
-```ts
-// esbuild.config.js
-import { build } from "esbuild"
-import Alias from "unplugin-alias/esbuild"
-
-build({
-  plugins: [Alias()],
-})
-```
+Esbuild supports alias out-of-box, so you don't need this plugin.
 
 <br></details>
