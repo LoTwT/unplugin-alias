@@ -10,7 +10,25 @@ export const getTSConfigPaths = (options: Options) => {
 
   const configFilePath = resolve(cwd, configFile ?? "tsconfig.json")
 
-  const configResult = getTsconfig(configFilePath)
+  let configResult = getTsconfig(configFilePath)
+
+  let times = 0
+
+  if (!configResult) {
+    times = configFilePath.endsWith("tsconfig.json") ? 1 : 2
+  }
+
+  while (times > 0 && !configResult) {
+    if (times === 2) {
+      configResult = getTsconfig(resolve(cwd, "tsconfig.json"))
+    }
+
+    if (times === 1) {
+      configResult = getTsconfig(resolve(cwd, "jsconfig.json"))
+    }
+
+    times -= 1
+  }
 
   if (!configResult) {
     throw new Error(`❌ Can't find tsconfig file at ${configFilePath}`)
