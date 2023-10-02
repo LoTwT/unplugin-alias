@@ -1,9 +1,12 @@
 import { resolve } from "node:path"
 import { type Alias, type TSConfigPaths } from "./types"
 
-const suffix = "/*"
+const presetSuffix = "/*"
 
-export const mapPathToAlias = (paths: TSConfigPaths): Alias => {
+export const mapPathToAlias = (
+  paths: TSConfigPaths,
+  suffix = presetSuffix,
+): Alias => {
   const alias: Alias = {}
 
   Object.entries(paths).forEach(([rawPlaceholder, rawPlaceholderPaths]) => {

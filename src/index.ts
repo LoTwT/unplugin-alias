@@ -3,6 +3,8 @@ import { type UnpluginFactory } from "unplugin"
 import { type Options } from "./types"
 import { getTSConfigPaths, mapPathToAlias } from "./core"
 
+export * from "./core"
+
 export const unpluginFactory: UnpluginFactory<Options | undefined> = (
   options = {},
 ) => {
