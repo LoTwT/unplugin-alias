@@ -10,5 +10,6 @@
     "strict": true,
     "strictNullChecks": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["playgrounds"]
 }
