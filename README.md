@@ -2,6 +2,10 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-alias?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-alias)
 
+This unplugin helps you to setup alias for your bundler automatically by loading your `tsconfig.json` with its `compilerOptions.paths` field.
+
+And if you use some other runtime, such as JITI, you can use the function `mapPathToAlias` to setup manually.
+
 ## Install
 
 ```bash
